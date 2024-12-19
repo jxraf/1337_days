@@ -20,7 +20,7 @@ void ft_putnbr (int nbr) {
     else {
         ft_putchar('-');
         nbr *= -1;
-        ft_putchar(nbr);
+        ft_putnbr(nbr);
     }
         
 }
