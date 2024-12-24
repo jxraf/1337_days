@@ -7,7 +7,8 @@ void ft_putstr (char *str) {
     s++;
  } 
 }
+/*
 int main (void) {
 ft_putstr("nigga snake");
     return 0;
-}
+}*/
