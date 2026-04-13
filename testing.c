@@ -1,47 +1,43 @@
 #include <unistd.h>
 #include <stdio.h>
 
-
-void ft_print_comb2(void) 
+void	ft_putchar(char c)
 {
-        char      a;
-        char      b;
-        char      c;
-        char      d;
-        
-        a  = '0';
-
-        while (a <= '9') 
-        {
-                b = '0';
-                while (b <= '9') 
-                {
-                        c = a;
-                        d = b + 1;
-                        
-                        while (c <= '9') 
-                        {
-                                while (d <= '9')
-                                {
-                                        write(1, &a, 1);
-                                        write(1, &b, 1);
-                                        write(1, " ", 1);
-                                        write(1, &c, 1);
-                                        write(1, &d, 1);
-                                        if (!(a == '9' && b == '8'))
-                                        write(1, ", ", 2);
-                                        d++;
-                                }
-                                c++;
-                                d = '0';
-                        }b++;
-                }a++;
-        } 
+	write(1, &c, 1);
 }
+
+void ft_putnbr(int nb) 
+{
+        // to handle the stack overflow
+        if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+        //handle all the number excpt neg with recursion 
+        if (nb > -1 && nb < 10)
+        {
+                ft_putchar(nb + 48);
+        }
+        else if (nb > 9)
+        {
+                ft_putnbr(nb / 10);
+                ft_putchar((nb % 10) + 48);
+        }
+        else
+        //handle the negative number 
+        {
+                ft_putchar('-');
+                nb *= -1;
+                ft_putnbr(nb);
+        }
+
+}        
 
 int main () 
 {
-        ft_print_comb2();
 
-return 0;
+        ft_putnbr(-54);
+
+        return 0;
 }
