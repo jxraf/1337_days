@@ -1,10 +1,12 @@
 #include <unistd.h>
-void ft_swap (int *a,int *b) {
-    int z;
-    z = *a;
-   *a = *b;
-   *b = z;
-}
+void ft_swap(int *a, int *b) 
+{
+        int c;
+        c = *a;
+
+        *a = *b;
+        *b = c;
+}         
 /*
 void ft_putchar(char c) {
     write(1,&c,1);

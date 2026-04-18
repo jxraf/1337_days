@@ -1,43 +1,44 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_putchar(char c)
+void ft_swap(int *a, int *b) 
 {
-	write(1, &c, 1);
-}
+        int c;
+        c = *a;
 
-void ft_putnbr(int nb) 
-{
-        // to handle the stack overflow
-        if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-        //handle all the number excpt neg with recursion 
-        if (nb > -1 && nb < 10)
-        {
-                ft_putchar(nb + 48);
-        }
-        else if (nb > 9)
-        {
-                ft_putnbr(nb / 10);
-                ft_putchar((nb % 10) + 48);
-        }
-        else
-        //handle the negative number 
-        {
-                ft_putchar('-');
-                nb *= -1;
-                ft_putnbr(nb);
-        }
+        *a = *b;
+        *b = c;
+}                       
 
-}        
+
 
 int main () 
 {
+       
+        int nb = 10;
+        int na = 1;
+        
+        printf("%d \n",nb);
+        printf("%d \n",na);
 
-        ft_putnbr(-54);
+
+        ft_swap(&nb, &na);
+
+        printf("%d \n",nb);
+        printf("%d \n",na);
+
+
+
+        // int     a = 64;
+        // int     *p = &a;
+        // int     *n;
+        // *n = 42;
+        // printf("%d \n", a);
+        // printf("%p \n", &a);
+        // printf("%p \n", p);
+        // printf("%p \n", &p);
+        // printf("%d \n", *p);
+        // printf("%d \n", *n);
 
         return 0;
 }
