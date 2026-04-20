@@ -1,44 +1,29 @@
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
-void ft_swap(int *a, int *b) 
+void   ft_ultimate_div_mod(int *a, int *b)
 {
-        int c;
-        c = *a;
+       int    x;
+       int    z;
 
-        *a = *b;
-        *b = c;
-}                       
+       x = *a / *b;
+       z = *a % *b;
 
-
-
-int main () 
-{
+       *a = x;
+       *b = z;
        
-        int nb = 10;
-        int na = 1;
-        
-        printf("%d \n",nb);
-        printf("%d \n",na);
+}
 
 
-        ft_swap(&nb, &na);
+int main ()  
+{
+    int x = 20;
+    int z = 2;
 
-        printf("%d \n",nb);
-        printf("%d \n",na);
+    ft_ultimate_div_mod(&x,&z);
+
+    printf("%d \n",x);
+    printf("%d \n",z);
 
 
-
-        // int     a = 64;
-        // int     *p = &a;
-        // int     *n;
-        // *n = 42;
-        // printf("%d \n", a);
-        // printf("%p \n", &a);
-        // printf("%p \n", p);
-        // printf("%p \n", &p);
-        // printf("%d \n", *p);
-        // printf("%d \n", *n);
-
-        return 0;
 }
