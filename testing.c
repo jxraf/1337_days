@@ -1,29 +1,93 @@
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
 
-void   ft_ultimate_div_mod(int *a, int *b)
+void ft_putchar(char c) 
 {
-       int    x;
-       int    z;
+        write(1, &c, 1);
+}
 
-       x = *a / *b;
-       z = *a % *b;
+void ft_cmb2(void)
+{
+        char a;
+        char b;
+        char c;
+        char d;
 
-       *a = x;
-       *b = z;
-       
+        a = '0';
+        while (a <= 9)
+        {
+                b = '0';
+                while (b <= 8)
+                {
+                        c = a + 1;
+                        while (c <= 9)
+                        {
+                                d = b + 1;
+                                while (d <= 9)
+                                {
+                                        ft_putchar(a);
+                                        ft_putchar(b);
+                                        ft_putchar(' ');
+                                        ft_putchar(c);
+                                        ft_putchar(d);
+                                        
+                                        d++;
+                                }c++;
+                        }b++;
+                }a++;
+        }
 }
 
 
-int main ()  
+
+
+
+
+
+
+
+
+
+
+
+
+
+// void ft_comb(void)
+// {
+//         char a;
+//         char b;
+//         char c;
+
+//         a = '0';
+
+//         while (a <= '7')
+//         {
+//                 b = a + 1;
+//                 while (b <= '8')
+//                 {
+//                         c = b + 1;
+//                         while (c <= '9')
+//                         {
+//                                 ft_putchar(a);
+//                                 ft_putchar(b);
+//                                 ft_putchar(c);
+//                                 if (a != '7' || b != '8' || c != '9') 
+//                                 write(1, ", ", 2);
+                        
+//                         c++;
+//                         }
+                       
+//                         b++;
+//                 }
+                
+//                 a++;
+//         }
+// }
+
+
+int main ()
 {
-    int x = 20;
-    int z = 2;
+        ft_cmb2();
 
-    ft_ultimate_div_mod(&x,&z);
-
-    printf("%d \n",x);
-    printf("%d \n",z);
-
-
+        return 0;
 }
