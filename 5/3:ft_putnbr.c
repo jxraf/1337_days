@@ -1,6 +1,9 @@
 #include <unistd.h>
 void ft_putnbr(int nbr) {
     
+    if (nbr == -2147483647)
+        write(1, "-2147483647", 11);
+
     if (nbr > -1 && nbr < 10) {
         ft_putchar(nbr+ 48);
     } 
@@ -10,8 +13,7 @@ void ft_putnbr(int nbr) {
     }
     else {
         ft_putchar('-');
-        nbr *= -1;
-        ft_putnbr(nbr);
+        ft_putnbr(nbr * -1);
         }
   }
 /*
