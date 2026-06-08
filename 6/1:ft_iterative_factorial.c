@@ -3,12 +3,12 @@
 int ft_iterative_factorial(int nb) {
 
     int i;
-    i = 0;
+    i = 1;
 
-    while(n > 1)
+    while(nb > 1)
     {
         i *= nb;
-        n--;
+        nb--;
     }
  return i;
 }
